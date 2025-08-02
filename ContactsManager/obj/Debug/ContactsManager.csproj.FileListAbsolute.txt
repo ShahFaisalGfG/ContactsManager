@@ -1,0 +1,37 @@
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.AssemblyReference.cache
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.SuggestedBindingRedirects.cache
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.Form1.resources
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.Properties.Resources.resources
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.GenerateResource.cache
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.CoreCompileInputs.cache
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\bin\Debug\ContactsManager.exe.config
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\bin\Debug\ContactsManager.exe
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\bin\Debug\ContactsManager.pdb
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.exe
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.pdb
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\bin\Debug\ContactsManager.exe.manifest
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\bin\Debug\ContactsManager.application
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.exe.manifest
+C:\Users\shahf\OneDrive - gfg Royal\VS\ContactsManager\ContactsManager\obj\Debug\ContactsManager.application
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\ContactsManager.exe
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\ContactsManager.exe.config
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\ContactsManager.exe.manifest
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\ContactsManager.application
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\ContactsManager.pdb
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.AssemblyReference.cache
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.Form1.resources
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.Properties.Resources.resources
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.GenerateResource.cache
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.CoreCompileInputs.cache
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.exe.manifest
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.application
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.exe
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.pdb
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\EPPlus.dll
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\EPPlus.xml
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.CopyComplete
