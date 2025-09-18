@@ -51,6 +51,8 @@
             this.menuUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.btnOptions = new System.Windows.Forms.Button();
+            this.lblLessThan = new System.Windows.Forms.Label();
+            this.lblGreaterThan = new System.Windows.Forms.Label();
             this.tabControlContacts.SuspendLayout();
             this.contextMenuOptions.SuspendLayout();
             this.SuspendLayout();
@@ -274,11 +276,31 @@
             this.btnOptions.UseVisualStyleBackColor = true;
             this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
+            // lblLessThan
+            // 
+            this.lblLessThan.AutoSize = true;
+            this.lblLessThan.Location = new System.Drawing.Point(249, 44);
+            this.lblLessThan.Name = "lblLessThan";
+            this.lblLessThan.Size = new System.Drawing.Size(137, 17);
+            this.lblLessThan.TabIndex = 18;
+            this.lblLessThan.Text = "digit phone numbers";
+            // 
+            // lblGreaterThan
+            // 
+            this.lblGreaterThan.AutoSize = true;
+            this.lblGreaterThan.Location = new System.Drawing.Point(249, 71);
+            this.lblGreaterThan.Name = "lblGreaterThan";
+            this.lblGreaterThan.Size = new System.Drawing.Size(137, 17);
+            this.lblGreaterThan.TabIndex = 19;
+            this.lblGreaterThan.Text = "digit phone numbers";
+            // 
             // ContactsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 667);
+            this.Controls.Add(this.lblGreaterThan);
+            this.Controls.Add(this.lblLessThan);
             this.Controls.Add(this.chkIgnoreCountryCode);
             this.Controls.Add(this.lblLessError);
             this.Controls.Add(this.lblGreaterError);
@@ -330,6 +352,8 @@
     private System.Windows.Forms.CheckBox chkIgnoreCountryCode;
     private System.Windows.Forms.Label lblLessError;
     private System.Windows.Forms.Label lblGreaterError;
+        private System.Windows.Forms.Label lblLessThan;
+        private System.Windows.Forms.Label lblGreaterThan;
     }
 }
 
