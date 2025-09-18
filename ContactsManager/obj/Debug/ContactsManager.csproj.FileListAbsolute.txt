@@ -53,3 +53,6 @@ D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\EPPlus.x
 D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\Contacts.54A432EC.Up2Date
 D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.ContactsManager.resources
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.AboutForm.resources
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.SettingsForm.resources
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.UpdateForm.resources

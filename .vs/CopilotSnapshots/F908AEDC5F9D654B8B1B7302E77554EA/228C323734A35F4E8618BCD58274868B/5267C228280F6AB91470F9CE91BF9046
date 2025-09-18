@@ -1,0 +1,58 @@
+﻿namespace ContactsManager
+{
+    partial class SettingsForm
+    {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Label lblPlaceholder;
+        private System.Windows.Forms.Button btnClose;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            this.lblPlaceholder = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lblPlaceholder
+            // 
+            this.lblPlaceholder.AutoSize = true;
+            this.lblPlaceholder.Location = new System.Drawing.Point(24, 18);
+            this.lblPlaceholder.Name = "lblPlaceholder";
+            this.lblPlaceholder.Size = new System.Drawing.Size(224, 17);
+            this.lblPlaceholder.TabIndex = 0;
+            this.lblPlaceholder.Text = "Settings will be implemented in a future update.";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(200, 60);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 30);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += (s, e) => this.Close();
+            // 
+            // SettingsForm
+            // 
+            this.ClientSize = new System.Drawing.Size(360, 110);
+            this.Controls.Add(this.lblPlaceholder);
+            this.Controls.Add(this.btnClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "SettingsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Settings";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+    }
+}

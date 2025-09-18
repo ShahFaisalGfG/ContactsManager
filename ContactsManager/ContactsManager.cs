@@ -23,6 +23,37 @@ namespace ContactsManager
             InitializeComponent();
             tabControlContacts.TabPages.Clear();
         }
+        
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            var location = btn.PointToScreen(new Point(0, btn.Height));
+            this.contextMenuOptions.Show(location);
+        }
+        
+        private void menuAbout_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new AboutForm())
+            {
+                dlg.ShowDialog(this);
+            }
+        }
+        
+        private void menuUpdate_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new UpdateForm())
+            {
+                dlg.ShowDialog(this);
+            }
+        }
+        
+        private void menuSettings_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new SettingsForm())
+            {
+                dlg.ShowDialog(this);
+            }
+        }
 
 
         private string GetCountryCode(string phoneNumber)

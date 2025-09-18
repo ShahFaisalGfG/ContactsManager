@@ -16,3 +16,6 @@ D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Release\Contac
 D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Release\ContactsManager.pdb
 D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Release\ContactsManager.exe
 D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Release\ContactsManager.pdb
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Release\ContactsManager.UpdateForm.resources
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Release\ContactsManager.SettingsForm.resources
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Release\ContactsManager.AboutForm.resources
