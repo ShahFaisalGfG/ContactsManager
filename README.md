@@ -29,17 +29,17 @@ Below are the application screenshots from the `assets/` folder. Add captions or
 
 ![Contacts grouped by country code](assets/Snapshot_1.png)
 
-![Open file dialog and file path shown](assets/Snapshot_2.png)
+<!-- ![Open file dialog and file path shown](assets/Snapshot_2.png) -->
 
-![Export to CSV confirmation](assets/Snapshot_3.png)
+<!-- ![Export to CSV confirmation](assets/Snapshot_3.png) -->
 
 ![Import results / parsing preview](assets/Snapshot_4.png)
-
-![Filter and tab options](assets/Snapshot_5.png)
 
 ![Export dialog or progress](assets/Snapshot_6.png)
 
 ![Settings or About dialog](assets/Snapshot_7.png)
+
+![Filter and tab options](assets/Snapshot_5.png)
 
 ## System requirements
 
