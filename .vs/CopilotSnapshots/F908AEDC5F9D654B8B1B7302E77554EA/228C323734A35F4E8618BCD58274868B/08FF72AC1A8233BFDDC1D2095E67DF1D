@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Bundle Name="ContactsManager" 
+          Version="$(var.ProductVersion)"
+          Manufacturer="$(var.Manufacturer)"
+          UpgradeCode="846d3a80-bb9a-4334-801d-469130d7915e">
+
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+
+    <Chain>
+      <!-- ExePackage for .NET installer (DetectCondition required by schema) -->
+      <ExePackage Id="NetFx481"
+                  DisplayName=".NET Framework 4.8.1"
+                  SourceFile="NDP481-Web.exe"
+                  Compressed="yes"
+                  PerMachine="yes"
+                  InstallArguments="/q /norestart"
+                  UninstallArguments=""
+                  DetectCondition="false" />
+
+      <!-- The MSI produced by the ContactsManagerSetup WiX project. -->
+      <MsiPackage SourceFile="$(var.ContactsManagerSetup.TargetPath)"
+                  Id="ContactsManagerMsi"
+                  DisplayName="ContactsManager"
+                  Compressed="yes"
+                  Vital="yes" />
+    </Chain>
+  </Bundle>
+</Wix>

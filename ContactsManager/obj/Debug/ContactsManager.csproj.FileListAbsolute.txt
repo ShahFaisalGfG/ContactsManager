@@ -35,3 +35,21 @@ C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManage
 C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\EPPlus.xml
 C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\shahf\OneDrive - gfg Royal\Visual Studio\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.CopyComplete
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.AssemblyReference.cache
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.Properties.Resources.resources
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.GenerateResource.cache
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.csproj.CoreCompileInputs.cache
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.exe
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.pdb
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\ContactsManager.exe.config
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\ContactsManager.exe
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\ContactsManager.pdb
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\EPPlus.dll
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\EPPlus.Interfaces.dll
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\EPPlus.System.Drawing.dll
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\System.ComponentModel.Annotations.dll
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\EPPlus.xml
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\Contacts.54A432EC.Up2Date
+D:\source\repos\ShahFaisalGfG\ContactsManager\ContactsManager\obj\Debug\ContactsManager.ContactsManager.resources

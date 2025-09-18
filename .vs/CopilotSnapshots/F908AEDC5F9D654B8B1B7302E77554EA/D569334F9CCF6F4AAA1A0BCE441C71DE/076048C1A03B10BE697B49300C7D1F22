@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <!-- Product manifest is defined in Package.wxs for WiX v4 bundle/msi project. Harvested components will be included via ComponentGroupRef in Package.wxs -->
+  <!-- This file intentionally left minimal to avoid duplicate Product element errors. -->
+</Wix>

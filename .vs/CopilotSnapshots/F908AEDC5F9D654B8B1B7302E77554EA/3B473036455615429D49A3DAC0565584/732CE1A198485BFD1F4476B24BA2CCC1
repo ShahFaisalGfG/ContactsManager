@@ -1,0 +1,5 @@
+﻿<Project Sdk="WixToolset.Sdk/6.0.2">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DefineConstants>Manufacturer=gfgRoyal;ProductVersion=1.0.0;ContactsManager.TargetDir=$(SolutionDir)ContactsManager\bin\$(Configuration)\</DefineConstants>
+  </PropertyGroup>
+</Project>

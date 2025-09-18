@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Bundle Name="ContactsManager" 
+          Version="$(var.ProductVersion)"
+          Manufacturer="$(var.Manufacturer)"
+          UpgradeCode="846d3a80-bb9a-4334-801d-469130d7915e">
+    <!-- Registry search to detect .NET 4.7.2 -->
+    <util:RegistrySearch Id="Netfx472Release"
+                         Root="HKLM"
+                         Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"
+                         Value="Release"
+                         Variable="Netfx472FullRelease"
+                         Win64="yes" />
+
+   <!-- <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense"> -->
+      <!-- include a license if you have one in the bundle project -->
+     <!-- <Payload SourceFile="License.rtf" /> -->
+    <!-- </BootstrapperApplicationRef> -->
+	  
+    <Chain>
+      <!-- Install .NET 4.8.1 if release < 461808 -->
+      <ExePackage Id="NetFx472-"
+                  DisplayName=".NET Framework 4.7.2"
+                  SourceFile="NDP481-Web.exe"
+                  Compressed="yes"
+                  PerMachine="yes"
+                  InstallCommand="/q /norestart"
+                  DetectCondition="Netfx472FullRelease &gt;= 461808" />
+
+      <!-- The MSI produced by the ContactsManagerSetup WiX project.
+           Ensure the Bundle project has a ProjectReference to ContactsManagerSetup so
+           $(var.ContactsManagerSetup.TargetPath) is available. -->
+      <MsiPackage SourceFile="$(var.ContactsManagerSetup.TargetPath)"
+                  Id="ContactsManagerMsi"
+                  DisplayName="ContactsManager"
+                  Compressed="yes"
+                  Vital="yes" />
+    </Chain>
+  </Bundle>
+</Wix>
