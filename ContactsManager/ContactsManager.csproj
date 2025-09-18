@@ -121,6 +121,7 @@
     <Compile Include="ContactsManager.Designer.cs">
       <DependentUpon>ContactsManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="CountryCodes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ContactsManager.resx">

@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
 
+//import countries and codes
+using static ContactsManager.CountryCodes;
+
 namespace ContactsManager
 {
     public partial class ContactsManager : Form
@@ -24,34 +27,29 @@ namespace ContactsManager
         private string GetCountryCode(string phoneNumber)
         {
             // Assuming country code is at the beginning of the phone number, preceded by a '+'
-            if (phoneNumber.StartsWith("+"))
+            if (!phoneNumber.StartsWith("+"))
             {
-                //Note: If you add more country codes then uncomment "retun countryCode" and remove line "return Pakistani"
-                string[] validCountryCodes = {
-            "+92","+91"
-        };
-
-                // Iterate through the valid country codes in descending order of length
-                foreach (string countryCode in validCountryCodes.OrderByDescending(code => code.Length))
-                {
-                    if (phoneNumber.StartsWith("+92"))
-                    {
-                        //If you add more country codes then uncomment "retun countryCode" and remove line "return Pakistani"
-                        //return countryCode;
-                        return "P";
-
-                    }
-                    if(phoneNumber.StartsWith("+91"))
-                    {
-                        return "I";
-                    }
-                }
-                return "O";
-            }
-
             // Default to an empty string if no valid country code is found
             return string.Empty;
+            }
+
+            // Use the explicit `Items` list from `CountryCodes`.
+            // Iterate longest-first so that '+1' doesn't match before '+1242', etc.
+            foreach (var item in CountryCodes.Items.OrderByDescending(i => i.Code.Length))
+            {
+                var code = item.Code;
+                var countryName = item.Country;
+                if (!string.IsNullOrEmpty(code) && phoneNumber.StartsWith(code))
+                {
+                    return $"{countryName} ({code})";
+                }
+            }
+
+            // No match found for a '+' prefixed number
+            return "O";
         }
+
+        // ...existing code...
 
         private void btnLoadContacts_Click(object sender, EventArgs e)
         {
