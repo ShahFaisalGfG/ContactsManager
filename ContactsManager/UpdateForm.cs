@@ -9,7 +9,7 @@ namespace ContactsManager
         public UpdateForm()
         {
             InitializeComponent();
-            this.linkRepo.Text = "github.com/ShahFaisalGfG/ContactsManager";
+            this.linkRepo.Text = "https://github.com/ShahFaisalGfG/ContactsManager";
             this.linkRepo.Links.Clear();
             this.linkRepo.Links.Add(0, this.linkRepo.Text.Length, this.linkRepo.Text);
         }

@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\contactsmanager\\contactsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|d:\\source\\repos\\shahfaisalgfg\\contactsmanager\\contactsmanager\\contactsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|solutionrelative:contactsmanager\\contactsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|d:\\source\\repos\\shahfaisalgfg\\contactsmanager\\contactsmanager\\updateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\contactsmanager\\updateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|solutionrelative:contactsmanager\\updateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -85,8 +85,7 @@
               "RelativeToolTip": "ContactsManager\\UpdateForm.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAuwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T17:12:37.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-18T17:12:37.03Z"
             },
             {
               "$type": "Document",
@@ -97,8 +96,7 @@
               "ToolTip": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\UpdateForm.cs [Design]",
               "RelativeToolTip": "ContactsManager\\UpdateForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T16:38:02.437Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-09-18T16:38:02.437Z"
             },
             {
               "$type": "Document",

@@ -14,7 +14,7 @@ namespace ContactsManager
             this.lblProductName.Text = "Contacts Manager";
             this.lblCompany.Text = "Shah Faisal GfG";
             this.lblVersion.Text = $"Version {Application.ProductVersion}";
-            this.linkWebsite.Text = "shahfaisalgfg.github.io/shahfaisalgfg";
+            this.linkWebsite.Text = "https://shahfaisalgfg.github.io/shahfaisalgfg";
             this.linkWebsite.Links.Clear();
             this.linkWebsite.Links.Add(0, this.linkWebsite.Text.Length, this.linkWebsite.Text);
         }
