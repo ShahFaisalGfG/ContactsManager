@@ -3,15 +3,23 @@
   "WorkspaceRootPath": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|d:\\source\\repos\\shahfaisalgfg\\contactsmanager\\contactsmanager\\contactsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|solutionrelative:contactsmanager\\contactsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|d:\\source\\repos\\shahfaisalgfg\\contactsmanager\\contactsmanager\\contactsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|solutionrelative:contactsmanager\\contactsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|d:\\source\\repos\\shahfaisalgfg\\contactsmanager\\contactsmanager\\contactsmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|solutionrelative:contactsmanager\\contactsmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|d:\\source\\repos\\shahfaisalgfg\\contactsmanager\\contactsmanager\\countrycodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|solutionrelative:contactsmanager\\countrycodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|d:\\source\\repos\\shahfaisalgfg\\contactsmanager\\contactsmanager\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\contactsmanager\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40106C9A-B664-4A76-8937-26E68E408435}|ContactsManager\\ContactsManager.csproj|solutionrelative:contactsmanager\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,20 +54,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ContactsManager.cs",
-              "DocumentMoniker": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\ContactsManager.cs",
-              "RelativeDocumentMoniker": "ContactsManager\\ContactsManager.cs",
-              "ToolTip": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\ContactsManager.cs",
-              "RelativeToolTip": "ContactsManager\\ContactsManager.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAAACQAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ContactsManager.Designer.cs",
+              "DocumentMoniker": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\ContactsManager.Designer.cs",
+              "RelativeDocumentMoniker": "ContactsManager\\ContactsManager.Designer.cs",
+              "ToolTip": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\ContactsManager.Designer.cs",
+              "RelativeToolTip": "ContactsManager\\ContactsManager.Designer.cs",
+              "ViewState": "AgIAABkBAAAAAAAAAAApwCcBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T11:52:33.515Z",
+              "WhenOpened": "2025-09-18T14:00:11.755Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ContactsManager.cs",
+              "DocumentMoniker": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\ContactsManager.cs",
+              "RelativeDocumentMoniker": "ContactsManager\\ContactsManager.cs",
+              "ToolTip": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\ContactsManager.cs",
+              "RelativeToolTip": "ContactsManager\\ContactsManager.cs",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAcwNwAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:44:28.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ContactsManager.cs [Design]",
+              "DocumentMoniker": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\ContactsManager.cs",
+              "RelativeDocumentMoniker": "ContactsManager\\ContactsManager.cs",
+              "ToolTip": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\ContactsManager.cs [Design]",
+              "RelativeToolTip": "ContactsManager\\ContactsManager.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T13:31:36.106Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CountryCodes.cs",
               "DocumentMoniker": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\CountryCodes.cs",
               "RelativeDocumentMoniker": "ContactsManager\\CountryCodes.cs",
@@ -72,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\Properties\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "ContactsManager\\Properties\\AssemblyInfo.cs",
@@ -85,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "app.manifest",
               "DocumentMoniker": "D:\\source\\repos\\ShahFaisalGfG\\ContactsManager\\ContactsManager\\Properties\\app.manifest",
               "RelativeDocumentMoniker": "ContactsManager\\Properties\\app.manifest",
@@ -93,7 +126,8 @@
               "RelativeToolTip": "ContactsManager\\Properties\\app.manifest",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
-              "WhenOpened": "2025-09-18T11:09:24.004Z"
+              "WhenOpened": "2025-09-18T11:09:24.004Z",
+              "EditorCaption": ""
             }
           ]
         }

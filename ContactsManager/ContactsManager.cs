@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
+// Removed dependency on Microsoft.VisualBasic.FileIO to avoid assembly reference issues
 
 //import countries and codes
 using static ContactsManager.CountryCodes;
@@ -55,7 +56,7 @@ namespace ContactsManager
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             //openFileDialog.Filter = "Text Files (*.txt)|*.txt|Excel Files (*.xlsx)|*.xlsx";
-            openFileDialog.Filter = "Custom Files (*.txt, *.xlsx)|*.txt;*.xlsx";
+            openFileDialog.Filter = "Custom Files (*.txt, *.xlsx, *.csv)|*.txt;*.xlsx;*.csv";
 
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -66,42 +67,48 @@ namespace ContactsManager
                 btnCSV.Visible = true;
                 btnSaveAllExcel.Visible = true;
 
-                if (filePath.EndsWith(".txt"))
+                if (filePath.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
                 {
                     LoadContactsFromTextFile(filePath);
                 }
-                else if (filePath.EndsWith(".xlsx"))
+                else if (filePath.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
                 {
                     LoadContactsFromExcelFile(filePath);
                 }
+                else if (filePath.EndsWith(".csv", StringComparison.OrdinalIgnoreCase))
+                {
+                    LoadContactsFromCsvFile(filePath);
+                }
                 else
                 {
-                    MessageBox.Show("Unsupported file format. Please select a .txt or .xlsx file.");
+                    MessageBox.Show("Unsupported file format. Please select a .txt, .csv or .xlsx file.");
                 }
+                // Show the reload button now that a file has been selected
+                this.btnReload.Visible = true;
             }
         }
 
         private void LoadContactsFromTextFile(string filePath)
         {
-            string[] lines = File.ReadAllLines(filePath);
-
+            var lines = File.ReadAllLines(filePath);
             tabControlContacts.TabPages.Clear();
 
-            HashSet<string> contactsSet = new HashSet<string>();
-            foreach (string contact in lines)
+            var contactsSet = new HashSet<string>();
+            foreach (var line in lines)
             {
-                string cleanedContact = CleanContact(contact);
-                if (!string.IsNullOrEmpty(cleanedContact))
+                var numbers = ExtractPhoneNumbers(line);
+                foreach (var num in numbers)
                 {
-                    contactsSet.Add(cleanedContact);
+                    contactsSet.Add(num);
                 }
             }
 
-            foreach (string contact in contactsSet)
+            foreach (var contact in contactsSet)
             {
-                string countryCode = GetCountryCode(contact);
-                TabPage tabPage = FindOrCreateTabPage(countryCode);
-                ListBox listBox = GetListBoxForTabPage(tabPage);
+                if (!IsAllowedLength(contact)) continue;
+                var countryCode = GetCountryCode(contact);
+                var tabPage = FindOrCreateTabPage(countryCode);
+                var listBox = GetListBoxForTabPage(tabPage);
                 listBox.Items.Add(contact);
             }
 
@@ -117,29 +124,22 @@ namespace ContactsManager
                 {
                     int startRow = worksheet.Dimension.Start.Row;
                     int endRow = worksheet.Dimension.End.Row;
-
-                    HashSet<string> contactsSet = new HashSet<string>();
+                    var contactsSet = new HashSet<string>();
 
                     for (int row = startRow; row <= endRow; row++)
                     {
                         var cell = worksheet.Cells[row, 1];
-                        string contact = cell.Text.Trim();
-
-                        if (!string.IsNullOrEmpty(contact))
-                        {
-                            string cleanedContact = CleanContact(contact);
-                            if (!string.IsNullOrEmpty(cleanedContact))
-                            {
-                                contactsSet.Add(cleanedContact);
-                            }
-                        }
+                        var text = cell.Text ?? string.Empty;
+                        var numbers = ExtractPhoneNumbers(text);
+                        foreach (var n in numbers) contactsSet.Add(n);
                     }
 
-                    foreach (string cleanedContact in contactsSet)
+                    foreach (var cleanedContact in contactsSet)
                     {
-                        string countryCode = GetCountryCode(cleanedContact);
-                        TabPage tabPage = FindOrCreateTabPage(countryCode);
-                        ListBox listBox = GetListBoxForTabPage(tabPage);
+                        if (!IsAllowedLength(cleanedContact)) continue;
+                        var countryCode = GetCountryCode(cleanedContact);
+                        var tabPage = FindOrCreateTabPage(countryCode);
+                        var listBox = GetListBoxForTabPage(tabPage);
                         listBox.Items.Add(cleanedContact);
                     }
                 }
@@ -154,6 +154,245 @@ namespace ContactsManager
             // Keep only the valid characters: "+", "0"-"9"
             string validCharacters = "+0123456789";
             return new string(contact.Where(c => validCharacters.Contains(c)).ToArray());
+        }
+
+        // Extract phone numbers from an input string. Rules:
+        // - A '+' starts a new phone number
+        // - From each '+', collect digits (0-9) that appear until the next '+' or end
+        //   — non-digit characters (spaces, dashes, parentheses) are ignored/skipped
+        // - Return normalized numbers (e.g. "+923001234567")
+        private IEnumerable<string> ExtractPhoneNumbers(string input)
+        {
+            if (string.IsNullOrEmpty(input)) yield break;
+
+            int i = 0;
+            while (i < input.Length)
+            {
+                int plus = input.IndexOf('+', i);
+                if (plus == -1) yield break;
+
+                var sb = new StringBuilder();
+                sb.Append('+');
+
+                int j = plus + 1;
+                bool foundDigit = false;
+                while (j < input.Length)
+                {
+                    char c = input[j];
+                    if (c == '+')
+                    {
+                        // start of next number; stop current
+                        break;
+                    }
+                    if (c >= '0' && c <= '9')
+                    {
+                        sb.Append(c);
+                        foundDigit = true;
+                    }
+                    // otherwise skip separators and other characters
+                    j++;
+                }
+
+                if (foundDigit)
+                {
+                    yield return sb.ToString();
+                }
+
+                // continue scanning after this plus (so overlapping pluses handled)
+                i = plus + 1;
+            }
+        }
+
+        // Return true if the given normalized phone number should be included
+        // based on the ignore-length UI controls. If parsing of the textbox
+        // values fails or the checkboxes are not checked, the corresponding
+        // rule is ignored.
+        private bool IsAllowedLength(string normalizedPhone)
+        {
+            if (string.IsNullOrEmpty(normalizedPhone)) return false;
+
+            // Determine digit count, optionally excluding the recognized country code digits
+            int digitCount = 0;
+            string remaining = normalizedPhone;
+            if (this.chkIgnoreCountryCode != null && this.chkIgnoreCountryCode.Checked && normalizedPhone.StartsWith("+"))
+            {
+                var matched = CountryCodes.Items.OrderByDescending(i => i.Code.Length)
+                                .FirstOrDefault(i => !string.IsNullOrEmpty(i.Code) && normalizedPhone.StartsWith(i.Code));
+                if (!string.IsNullOrEmpty(matched.Code))
+                {
+                    remaining = normalizedPhone.Substring(matched.Code.Length);
+                }
+                else
+                {
+                    // no known country code matched; strip leading '+' and count rest
+                    remaining = normalizedPhone.Substring(1);
+                }
+            }
+            digitCount = remaining.Count(char.IsDigit);
+
+            // Ignore-less-than rule
+            if (this.chkIgnoreLessThan != null && this.chkIgnoreLessThan.Checked)
+            {
+                if (!int.TryParse(this.txtIgnoreLessThan?.Text, out int min) || min <= 0)
+                {
+                    if (this.lblLessError != null)
+                    {
+                        this.lblLessError.Text = "Enter a positive integer";
+                    }
+                    return false;
+                }
+                else
+                {
+                    if (this.lblLessError != null)
+                    {
+                        this.lblLessError.Text = string.Empty;
+                    }
+                }
+                if (digitCount < min) return false;
+            }
+
+            // Ignore-greater-than rule
+            if (this.chkIgnoreGreaterThan != null && this.chkIgnoreGreaterThan.Checked)
+            {
+                if (!int.TryParse(this.txtIgnoreGreaterThan?.Text, out int max) || max <= 0)
+                {
+                    if (this.lblGreaterError != null)
+                    {
+                        this.lblGreaterError.Text = "Enter a positive integer";
+                    }
+                    return false;
+                }
+                else
+                {
+                    if (this.lblGreaterError != null)
+                    {
+                        this.lblGreaterError.Text = string.Empty;
+                    }
+                }
+                if (digitCount > max) return false;
+            }
+
+            return true;
+        }
+
+        private void txtIgnoreLessThan_TextChanged(object sender, EventArgs e)
+        {
+            ValidateNumericTextBox(this.txtIgnoreLessThan, this.lblLessError);
+        }
+
+        private void txtIgnoreGreaterThan_TextChanged(object sender, EventArgs e)
+        {
+            ValidateNumericTextBox(this.txtIgnoreGreaterThan, this.lblGreaterError);
+        }
+
+        private void ValidateNumericTextBox(TextBox box, Label errorLabel)
+        {
+            if (box == null || errorLabel == null) return;
+            if (string.IsNullOrWhiteSpace(box.Text))
+            {
+                errorLabel.Text = "";
+                return;
+            }
+            if (!int.TryParse(box.Text, out int val) || val <= 0)
+            {
+                errorLabel.Text = "Enter a positive integer";
+            }
+            else
+            {
+                errorLabel.Text = string.Empty;
+            }
+        }
+
+        private void chkIgnoreLessThan_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.txtIgnoreLessThan != null)
+            {
+                this.txtIgnoreLessThan.Enabled = this.chkIgnoreLessThan.Checked;
+            }
+        }
+
+        private void chkIgnoreGreaterThan_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.txtIgnoreGreaterThan != null)
+            {
+                this.txtIgnoreGreaterThan.Enabled = this.chkIgnoreGreaterThan.Checked;
+            }
+        }
+
+        private void txtNumeric_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys, digits only
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                System.Media.SystemSounds.Beep.Play();
+            }
+        }
+
+        // Very small CSV parser for a single line. Handles fields enclosed in double-quotes
+        // and commas inside quoted fields. Returns an array of fields.
+        private string[] ParseCsvLine(string line)
+        {
+            if (line == null) return new string[0];
+
+            var fields = new List<string>();
+            var sb = new StringBuilder();
+            bool inQuotes = false;
+            for (int i = 0; i < line.Length; i++)
+            {
+                char c = line[i];
+                if (c == '"')
+                {
+                    if (inQuotes && i + 1 < line.Length && line[i + 1] == '"')
+                    {
+                        // Escaped quote
+                        sb.Append('"');
+                        i++; // skip next quote
+                    }
+                    else
+                    {
+                        inQuotes = !inQuotes;
+                    }
+                }
+                else if (c == ',' && !inQuotes)
+                {
+                    fields.Add(sb.ToString());
+                    sb.Clear();
+                }
+                else
+                {
+                    sb.Append(c);
+                }
+            }
+            fields.Add(sb.ToString());
+            return fields.ToArray();
+        }
+
+        private void LoadContactsFromCsvFile(string filePath)
+        {
+            tabControlContacts.TabPages.Clear();
+
+            var contactsSet = new HashSet<string>();
+            foreach (var line in File.ReadAllLines(filePath))
+            {
+                var fields = ParseCsvLine(line);
+                foreach (var f in fields)
+                {
+                    var numbers = ExtractPhoneNumbers(f ?? string.Empty);
+                    foreach (var n in numbers) contactsSet.Add(n);
+                }
+            }
+
+            foreach (var contact in contactsSet)
+            {
+                if (!IsAllowedLength(contact)) continue;
+                var countryCode = GetCountryCode(contact);
+                var tabPage = FindOrCreateTabPage(countryCode);
+                var listBox = GetListBoxForTabPage(tabPage);
+                listBox.Items.Add(contact);
+            }
+
+            MessageBox.Show("Contacts loaded successfully");
         }
 
         private TabPage FindOrCreateTabPage(string countryCode)
@@ -324,6 +563,40 @@ namespace ContactsManager
         private void btnCSV_Click(object sender, EventArgs e)
         {
             ExportContactsToCSV();
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            var filePath = lblFilePath.Text;
+            if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
+            {
+                MessageBox.Show("No file selected or file not found. Please select a valid contacts file to reload.");
+                return;
+            }
+
+            try
+            {
+                if (filePath.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
+                {
+                    LoadContactsFromTextFile(filePath);
+                }
+                else if (filePath.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
+                {
+                    LoadContactsFromExcelFile(filePath);
+                }
+                else if (filePath.EndsWith(".csv", StringComparison.OrdinalIgnoreCase))
+                {
+                    LoadContactsFromCsvFile(filePath);
+                }
+                else
+                {
+                    MessageBox.Show("Unsupported file format. Please select a .txt, .csv or .xlsx file.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reloading contacts: " + ex.Message);
+            }
         }
 
         private void btnSaveAllExcel_Click(object sender, EventArgs e)
