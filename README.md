@@ -25,9 +25,21 @@ Contacts Manager extracts and normalizes phone numbers from common file formats,
 
 ## Screenshots
 
-- `assets/Snapshot_1.png` — Contacts grouped by country code
-- `assets/Snapshot_2.png` — Open file dialog and file path shown
-- (Optional) `assets/Snapshot_3.png` — Export to CSV confirmation
+Below are the application screenshots from the `assets/` folder. Add captions or replace filenames as needed.
+
+![Contacts grouped by country code](assets/Snapshot_1.png)
+
+![Open file dialog and file path shown](assets/Snapshot_2.png)
+
+![Export to CSV confirmation](assets/Snapshot_3.png)
+
+![Import results / parsing preview](assets/Snapshot_4.png)
+
+![Filter and tab options](assets/Snapshot_5.png)
+
+![Export dialog or progress](assets/Snapshot_6.png)
+
+![Settings or About dialog](assets/Snapshot_7.png)
 
 ## System requirements
 
